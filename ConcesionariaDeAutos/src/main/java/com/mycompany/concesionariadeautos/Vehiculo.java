@@ -11,7 +11,7 @@ public class Vehiculo implements Serializable {
     
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
-    private int idVehiculo;
+    private int id;
     private String marca;
     private String modelo;
     private String patente;
@@ -22,8 +22,8 @@ public class Vehiculo implements Serializable {
     public Vehiculo() {
     }
 
-    public Vehiculo(int idVehiculo, String marca, String modelo, String patente, String anioFabricacion, double precio) {
-        this.idVehiculo = idVehiculo;
+    public Vehiculo(int id, String marca, String modelo, String patente, String anioFabricacion, double precio) {
+        this.id = id;
         this.marca = marca;
         this.modelo = modelo;
         this.patente = patente;
@@ -31,12 +31,12 @@ public class Vehiculo implements Serializable {
         this.precio = precio;
     }
 
-    public int getIdVehiculo() {
-        return idVehiculo;
+    public int getId() {
+        return id;
     }
 
-    public void setIdVehiculo(int idVehiculo) {
-        this.idVehiculo = idVehiculo;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getMarca() {
@@ -79,9 +79,9 @@ public class Vehiculo implements Serializable {
         this.precio = precio;
     }
 
-    @Override
+    /*@Override
     public String toString() {
-        return "Vehiculo{" + "idVehiculo=" + idVehiculo + ", marca=" + marca + ", modelo=" + modelo + ", patente=" + patente + ", anioFabricacion=" + anioFabricacion + ", precio=" + precio + '}';
-    }
+        return "Vehiculo{" + "id=" + id + ", marca=" + marca + ", modelo=" + modelo + ", patente=" + patente + ", anioFabricacion=" + anioFabricacion + ", precio=" + precio + '}';
+    }*/
     
 }

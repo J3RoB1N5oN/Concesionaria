@@ -23,7 +23,7 @@ public class VehiculoJpaController implements Serializable {
     }
     
     public VehiculoJpaController() {
-        emf = Persistence.createEntityManagerFactory ("ConcesionariaDeAutosPU");
+        emf = Persistence.createEntityManagerFactory("ConcesionariaDeAutosPU");
     }
     
     private EntityManagerFactory emf = null;
@@ -56,7 +56,7 @@ public class VehiculoJpaController implements Serializable {
         } catch (Exception ex) {
             String msg = ex.getLocalizedMessage();
             if (msg == null || msg.length() == 0) {
-                int id = vehiculo.getIdVehiculo();
+                int id = vehiculo.getId();
                 if (findVehiculo(id) == null) {
                     throw new NonexistentEntityException("The vehiculo with id " + id + " no longer exists.");
                 }
@@ -77,7 +77,7 @@ public class VehiculoJpaController implements Serializable {
             Vehiculo vehiculo;
             try {
                 vehiculo = em.getReference(Vehiculo.class, id);
-                vehiculo.getIdVehiculo();
+                vehiculo.getId();
             } catch (EntityNotFoundException enfe) {
                 throw new NonexistentEntityException("The vehiculo with id " + id + " no longer exists.", enfe);
             }
