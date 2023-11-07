@@ -1,35 +1,34 @@
 package com.mycompany.concesionariadeautos;
 
-public abstract class Vehiculo {
+import java.io.Serializable;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
+public class Vehiculo implements Serializable {
+    
+    @Id
+    @GeneratedValue(strategy=GenerationType.AUTO)
     private int idVehiculo;
     private String marca;
     private String modelo;
-    private String color;
+    private String patente;
     private String anioFabricacion;
     private double precio;
+
 
     public Vehiculo() {
     }
 
-    public Vehiculo(int idVehiculo, String marca, String modelo, String color, String anioFabricacion, double precio) {
+    public Vehiculo(int idVehiculo, String marca, String modelo, String patente, String anioFabricacion, double precio) {
         this.idVehiculo = idVehiculo;
         this.marca = marca;
         this.modelo = modelo;
-        this.color = color;
+        this.patente = patente;
         this.anioFabricacion = anioFabricacion;
         this.precio = precio;
-    }
-    
-    public void hacerService () {
-        System.out.println("Service de vehículo realizado correctamente");
-    }
-    
-    public void otorgarGarantia () {
-        System.out.println("Garantía otorgada a vehículo correctamente");
-    }
-    
-    public void calibrarCubiertas () {
-        System.out.println("Cubiertas de vehículo calibradas correctamente");
     }
 
     public int getIdVehiculo() {
@@ -56,12 +55,12 @@ public abstract class Vehiculo {
         this.modelo = modelo;
     }
 
-    public String getColor() {
-        return color;
+    public String getPatente() {
+        return patente;
     }
 
-    public void setColor(String color) {
-        this.color = color;
+    public void setPatente(String patente) {
+        this.patente = patente;
     }
 
     public String getAnioFabricacion() {
@@ -82,7 +81,7 @@ public abstract class Vehiculo {
 
     @Override
     public String toString() {
-        return "Vehiculo{" + "idVehiculo=" + idVehiculo + ", marca=" + marca + ", modelo=" + modelo + ", color=" + color + ", anioFabricacion=" + anioFabricacion + ", precio=" + precio + '}';
+        return "Vehiculo{" + "idVehiculo=" + idVehiculo + ", marca=" + marca + ", modelo=" + modelo + ", patente=" + patente + ", anioFabricacion=" + anioFabricacion + ", precio=" + precio + '}';
     }
     
 }

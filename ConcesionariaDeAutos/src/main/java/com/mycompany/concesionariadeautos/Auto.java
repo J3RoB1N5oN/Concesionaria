@@ -3,31 +3,21 @@ package com.mycompany.concesionariadeautos;
 public class Auto extends Vehiculo{
     private int cantidadPuertas;
     private int cantidadAsientos;
-    private String potenciaMotor;
+    private String motor;
+    private int kilometraje;
+    private String rodadoNeumatico;
+    
 
     public Auto() {
     }
 
-    public Auto(int cantidadPuertas, int cantidadAsientos, String potenciaMotor, int idVehiculo, String marca, String modelo, String color, String anioFabricacion, double precio) {
-        super(idVehiculo, marca, modelo, color, anioFabricacion, precio);
+    public Auto(int cantidadPuertas, int cantidadAsientos, String potenciaMotor, int idVehiculo, String marca, String modelo, String patente, String anioFabricacion, double precio, String motor, int kilometraje, String rodadoNeumatico) {
+        super(idVehiculo, marca, modelo, patente, anioFabricacion, precio);
         this.cantidadPuertas = cantidadPuertas;
         this.cantidadAsientos = cantidadAsientos;
-        this.potenciaMotor = potenciaMotor;
-    }
-    
-     @Override
-    public void hacerService () {
-        System.out.println("Service de Auto realizado correctamente");
-    }
-    
-    @Override
-    public void otorgarGarantia () {
-        System.out.println("Garantía otorgada a Auto correctamente");
-    }
-    
-    @Override
-    public void calibrarCubiertas () {
-        System.out.println("Cubiertas de Auto calibradas correctamente");
+        this.motor = motor;
+        this.kilometraje = kilometraje;
+        this.rodadoNeumatico = rodadoNeumatico;
     }
 
     public int getCantidadPuertas() {
@@ -46,12 +36,28 @@ public class Auto extends Vehiculo{
         this.cantidadAsientos = cantidadAsientos;
     }
 
-    public String getPotenciaMotor() {
-        return potenciaMotor;
+    public String getMotor() {
+        return motor;
     }
 
-    public void setPotenciaMotor(String potenciaMotor) {
-        this.potenciaMotor = potenciaMotor;
+    public void setMotor(String motor) {
+        this.motor = motor;
+    }
+
+    public int getKilometraje() {
+        return kilometraje;
+    }
+
+    public void setKilometraje(int kilometraje) {
+        this.kilometraje = kilometraje;
+    }
+
+    public String getRodadoNeumatico() {
+        return rodadoNeumatico;
+    }
+
+    public void setRodadoNeumatico(String rodadoNeumatico) {
+        this.rodadoNeumatico = rodadoNeumatico;
     }
     
 }
