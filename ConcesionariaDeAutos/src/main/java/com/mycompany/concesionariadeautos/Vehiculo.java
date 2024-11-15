@@ -79,9 +79,9 @@ public class Vehiculo implements Serializable {
         this.precio = precio;
     }
 
-    /*@Override
+    @Override
     public String toString() {
         return "Vehiculo{" + "id=" + id + ", marca=" + marca + ", modelo=" + modelo + ", patente=" + patente + ", anioFabricacion=" + anioFabricacion + ", precio=" + precio + '}';
-    }*/
+    }
     
 }
